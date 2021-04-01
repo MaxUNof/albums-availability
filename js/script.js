@@ -3,7 +3,7 @@ google.setOnLoadCallback(onGoogleLoaded);
 
 function onGoogleLoaded() {
 
-  var SITE_URL = 'https://kaaes.github.io/albums-availability';
+  var SITE_URL = 'https://maxunof.github.io/albums-availability';
 
   var ALL_MARKETS = {
     "AD": "Andorra",
