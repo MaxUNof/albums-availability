@@ -1,4 +1,4 @@
-google.load("visualization", "1", {packages:["geochart"]});
+google.load("visualization", "1", {packages:["geochart"],mapsApiKey:"AIzaSyADQdb85vugNOSsFBARiN4fEXLkfPhXkic"});
 google.setOnLoadCallback(onGoogleLoaded);
 
 function onGoogleLoaded() {
