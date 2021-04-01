@@ -186,19 +186,20 @@ function onGoogleLoaded() {
 
     var url = evt.dataTransfer.getData('text/plain');
     if (!url) return;
-    if (url.indexOf('open.spotify.com') > -1) {
-      var parsed = parseUri(url.replace(/https?:\/\/open.spotify.com\//, 'spotify/'), '/');
-    } else {
-      var parsed = parseUri(url);
-    }
 
-    validateAndPerformSearch(parsed);
+    validateAndPerformSearch(parseUri(url));
 
     return false;
   }
 
-  function parseUri(uri, delimiter) {
-    var segments = uri.split(delimiter || ':');
+  function parseUri(uri) {
+    var delimiter = ':';
+    if (uri.indexOf('open.spotify.com') > -1) {
+      uri = uri.replace(/https?:\/\/open.spotify.com\//, 'spotify/');
+      delimiter = '/';
+    }
+    
+    var segments = uri.split(delimiter);
     var id, type;
     if (segments[1] === 'user') {
       type = segments[3];
