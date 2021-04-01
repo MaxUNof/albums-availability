@@ -1,30 +1,5 @@
-@font-face {
-  font-family: 'proxima_nova';
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_light_0.eot');
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_light_0.eot?#iefix') format('embedded-opentype'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_light_0.woff') format('woff'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_light_0.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'proxima_nova';
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_thin_0.eot');
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_thin_0.eot?#iefix') format('embedded-opentype'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_thin_0.woff') format('woff'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_thin_0.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'proxima_nova';
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_regular_0.eot');
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_regular_0.eot?#iefix') format('embedded-opentype'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_regular_0.woff') format('woff'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_regular_0.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'proxima_nova';
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_semibold_0.eot');
-  src: url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_semibold_0.eot?#iefix') format('embedded-opentype'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_semibold_0.woff') format('woff'), url('https://d3nkxvtkt5c8vi.cloudfront.net/3.0.1/fonts/proxima_nova_semibold_0.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+body {
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 body {
