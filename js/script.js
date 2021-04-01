@@ -193,29 +193,17 @@ function onGoogleLoaded() {
   }
 
   function parseUri(uri) {
-    var delimiter = ':';
-    if (uri.indexOf('open.spotify.com') > -1) {
-      uri = uri.replace(/https?:\/\/open.spotify.com\//, 'spotify/');
-      delimiter = '/';
+    const regex = /^(?:(?:https?:\/\/)?)open\.spotify\.com\/album\/(\w+)(?:\?.*)?$|^spotify:album:(.*)$/;
+    const match = regex.exec(uri)
+    if (match !== null && match.length == 3) {
+      return match[1] || match[2]
     }
-    
-    var segments = uri.split(delimiter);
-    var id, type;
-    if (segments[1] === 'user') {
-      type = segments[3];
-      id = segments[2] + ':' + segments[4];
-    } else if (segments[1] === 'album') {
-      type = segments[1];
-      id = segments[2];
-    }
-    return {type: type, id: id};
   }
 
   function validateAndPerformSearch(parsedUri) {
-
-    if (parsedUri.type == 'album') {
+    if (parsedUri !== undefined) {
       document.body.classList.remove('invalid-search');
-      performSearch(parsedUri.id);
+      performSearch(parsedUri);
     } else {
       document.body.classList.add('invalid-search');
       clearChart();
