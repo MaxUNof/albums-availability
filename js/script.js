@@ -5,100 +5,11 @@ function onGoogleLoaded() {
 
   var SITE_URL = 'https://maxunof.github.io/albums-availability';
 
-  var ALL_MARKETS = {
-    "AD": "Andorra",
-    "AE": "United Arab Emirates",
-    "AL": "Albania",
-    "AR": "Argentina",
-    "AT": "Austria",
-    "AU": "Australia",
-    "BA": "Bosnia and Herzegovina",
-    "BE": "Belgium",
-    "BG": "Bulgaria",
-    "BH": "Bahrain",
-    "BO": "Bolivia",
-    "BR": "Brazil",
-    "BY": "Belarus",
-    "CA": "Canada",
-    "CH": "Switzerland",
-    "CL": "Chile",
-    "CO": "Colombia",
-    "CR": "Costa Rica",
-    "CY": "Cyprus",
-    "CZ": "Czech Republic",
-    "DE": "Germany",
-    "DK": "Denmark",
-    "DO": "Dominican Republic",
-    "DZ": "Algeria",
-    "EC": "Ecuador",
-    "EE": "Estonia",
-    "EG": "Egypt",
-    "ES": "Spain",
-    "FI": "Finland",
-    "FR": "France",
-    "GB": "United Kingdom",
-    "GR": "Greece",
-    "GT": "Guatemala",
-    "HK": "Hong Kong",
-    "HN": "Honduras",
-    "HR": "Croatia",
-    "HU": "Hungary",
-    "ID": "Indonesia",
-    "IE": "Ireland",
-    "IL": "Israel",
-    "IN": "India",
-    "IS": "Iceland",
-    "IT": "Italy",
-    "JO": "Jordan",
-    "JP": "Japan",
-    "KW": "Kuwait",
-    "KZ": "Kazakhstan",
-    "LB": "Lebanon",
-    "LI": "Liechtenstein",
-    "LT": "Lithuania",
-    "LU": "Luxembourg",
-    "LV": "Latvia",
-    "MA": "Morocco",
-    "MC": "Monaco",
-    "MD": "Republic of Moldova",
-    "ME": "Montenegro",
-    "MK": "North Macedonia",
-    "MT": "Malta",
-    "MX": "Mexico",
-    "MY": "Malaysia",
-    "NI": "Nicaragua",
-    "NL": "Netherlands",
-    "NO": "Norway",
-    "NZ": "New Zealand",
-    "OM": "Oman",
-    "PA": "Panama",
-    "PE": "Peru",
-    "PH": "Philippines",
-    "PL": "Poland",
-    "PS": "Palestine",
-    "PT": "Portugal",
-    "PY": "Paraguay",
-    "QA": "Qatar",
-    "RO": "Romania",
-    "RS": "Serbia",
-    "RU": "Russia",
-    "SA": "Saudi Arabia",
-    "SE": "Sweden",
-    "SG": "Singapore",
-    "SI": "Slovenia",
-    "SK": "Slovakia",
-    "SV": "El Salvador",
-    "TH": "Thailand",
-    "TN": "Tunisia",
-    "TR": "Turkey",
-    "TW": "Taiwan, Province of China",
-    "UA": "Ukraine",
-    "US": "United States",
-    "UY": "Uruguay",
-    "VN": "Viet Nam",
-    "ZA": "South Africa",
-    "XK": "Kosovo"
-  };
+  var ALL_MARKETS = {};
+  for (const e of countryFlagEmoji.list) {
+    ALL_MARKETS[e.code] = e.name;
+  }
+
   var SPOTIFY_API = 'https://api.spotify.com/v1';
 
   var HIGHLIGHT_TIMEOUT = 100;
@@ -353,7 +264,7 @@ function onGoogleLoaded() {
       }
       html += '</ul>';
       html += '<p>' + album.available_markets.map(function(el) {
-        return '<span title="' + ALL_MARKETS[el] + '">' + el + '</span>';
+        return '<span title="' + ALL_MARKETS[el] + '">' + countryFlagEmoji.get(el).emoji + '</span>';
       }).join(' ') + '</p>';
       html += '<p class="uri"><a href="https://api.spotify.com/v1/albums/' + album.id + '">' + album.uri+ '</a></p>';
       if (copyrights.get('C')) {
