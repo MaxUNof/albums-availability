@@ -277,6 +277,7 @@ function onGoogleLoaded() {
 
       fragment.appendChild(div);
     });
+    twemoji.parse(fragment);
     return fragment;
   }
 
