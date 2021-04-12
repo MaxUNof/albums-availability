@@ -218,6 +218,6 @@ a:focus {
   }
 }
 
-.countries > img {
+.countries > span > img {
   width: 24px;
 }
