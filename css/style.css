@@ -217,3 +217,7 @@ a:focus {
     position: fixed;
   }
 }
+
+.countries > img {
+  width: 24px;
+}

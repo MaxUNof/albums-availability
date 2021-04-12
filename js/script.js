@@ -263,7 +263,7 @@ function onGoogleLoaded() {
         html += '<li><span class="explicit">Explicit</span>&nbsp;</li>';
       }
       html += '</ul>';
-      html += '<p>' + album.available_markets.map(function(el) {
+      html += '<p class="countries">' + album.available_markets.map(function(el) {
         return '<span title="' + ALL_MARKETS[el] + '">' + countryFlagEmoji.get(el).emoji + '</span>';
       }).join(' ') + '</p>';
       html += '<p class="uri"><a href="https://api.spotify.com/v1/albums/' + album.id + '">' + album.uri+ '</a></p>';
@@ -277,7 +277,7 @@ function onGoogleLoaded() {
 
       fragment.appendChild(div);
     });
-    twemoji.parse(fragment, {size: 16});
+    twemoji.parse(fragment, {folder: 'svg', ext: '.svg'});
     return fragment;
   }
 
