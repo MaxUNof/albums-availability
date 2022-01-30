@@ -1,4 +1,4 @@
-google.load("visualization", "1", {packages:["geochart"],mapsApiKey:"AIzaSyADQdb85vugNOSsFBARiN4fEXLkfPhXkic"});
+google.load("visualization", "1", { packages: ["geochart"], mapsApiKey: "AIzaSyADQdb85vugNOSsFBARiN4fEXLkfPhXkic" });
 google.setOnLoadCallback(onGoogleLoaded);
 
 function onGoogleLoaded() {
@@ -264,7 +264,7 @@ function onGoogleLoaded() {
       }
       html += '</ul>';
       html += '<p class="countries">' + album.available_markets.map(function(el) {
-        return '<span title="' + ALL_MARKETS[el] + '">' + countryFlagEmoji.get(el).emoji + '</span>';
+        return '<span data-toggle="tooltip" title="' + ALL_MARKETS[el] + '">' + countryFlagEmoji.get(el).emoji + '</span>';
       }).join(' ') + '</p>';
       html += '<p class="uri"><a href="https://api.spotify.com/v1/albums/' + album.id + '">' + album.uri+ '</a></p>';
       if (copyrights.get('C')) {
@@ -303,6 +303,8 @@ function onGoogleLoaded() {
         if(!infoContainer.querySelector(".searched")) {
           exactMatchNotFound(album);
         }
+
+        $('[data-toggle="tooltip"]').tooltip();
       });
     } else {
       exactMatchNotFound(album);
