@@ -3,7 +3,7 @@ google.setOnLoadCallback(onGoogleLoaded);
 
 function onGoogleLoaded() {
 
-  var SITE_URL = 'https://maxunof.github.io/albums-availability';
+  var SITE_URL = 'https://altfoxie.github.io/albums-availability';
 
   var ALL_MARKETS = {};
   for (const e of countryFlagEmoji.list) {
