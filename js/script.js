@@ -1,4 +1,5 @@
-google.load("visualization", "1", {packages:["geochart"],mapsApiKey:"AIzaSyADQdb85vugNOSsFBARiN4fEXLkfPhXkic"});
+$('[data-toggle="tooltip"]').tooltip();
+google.load("visualization", "1", { packages: ["geochart"], mapsApiKey: "AIzaSyADQdb85vugNOSsFBARiN4fEXLkfPhXkic" });
 google.setOnLoadCallback(onGoogleLoaded);
 
 function onGoogleLoaded() {
@@ -299,8 +300,6 @@ function onGoogleLoaded() {
         nest.forEach(function(el) {
           infoContainer.insertBefore(getAlbumInfo(el.key, el.values, album.id), infoContainer.firstChild);
         });
-
-        $('[data-toggle="tooltip"]').tooltip();
 
         if(!infoContainer.querySelector(".searched")) {
           exactMatchNotFound(album);
