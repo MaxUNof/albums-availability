@@ -264,7 +264,7 @@ function onGoogleLoaded() {
       }
       html += '</ul>';
       html += '<p class="countries">' + album.available_markets.map(function(el) {
-        return '<span title="' + ALL_MARKETS[el] + '">' + countryFlagEmoji.get(el).emoji + '</span>';
+        return '<span data-toggle="tooltip" title="' + ALL_MARKETS[el] + '">' + countryFlagEmoji.get(el).emoji + '</span>';
       }).join(' ') + '</p>';
       html += '<p class="uri"><a href="https://api.spotify.com/v1/albums/' + album.id + '">' + album.uri+ '</a></p>';
       if (copyrights.get('C')) {
@@ -299,6 +299,8 @@ function onGoogleLoaded() {
         nest.forEach(function(el) {
           infoContainer.insertBefore(getAlbumInfo(el.key, el.values, album.id), infoContainer.firstChild);
         });
+
+        $('[data-toggle="tooltip"]').tooltip();
 
         if(!infoContainer.querySelector(".searched")) {
           exactMatchNotFound(album);
